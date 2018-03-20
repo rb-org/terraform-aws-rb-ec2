@@ -36,7 +36,10 @@ data "template_file" "ec2_userdata" {
   }
 }
 
+/*
 data "aws_subnet" "selected" {
   count = "${length(var.subnet)}"
   id    = "${var.subnet[count.index]}"
 }
+*/
+
