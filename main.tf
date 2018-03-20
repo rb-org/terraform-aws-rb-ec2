@@ -1,5 +1,6 @@
 locals {
-  ami_id           = "${var.ami_id != "" ? var.ami_id : data.aws_ami.default.image_id}"
+  ami_id = "${var.ami_id != "" ? var.ami_id : data.aws_ami.default.image_id}"
+
   #user_data        = "${var.user_data != "" ? "${file(var.user_data)}" : "${file("${path.module}/files/userdata_ec2.ps1")}"}"
   user_data        = "${var.user_data != "" ? "${file(var.user_data)}" : ""}"
   root_volume_type = "${var.root_volume_type != "" ? var.root_volume_type : data.aws_ami.info.root_device_type}"
